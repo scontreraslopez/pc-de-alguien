@@ -24,7 +24,7 @@ El proyecto está construido utilizando las últimas prácticas recomendadas par
 * **Arquitectura:** MVVM (Model-View-ViewModel) con gestión de estado (`UiState`).
 * **Red (Networking):**
     * [Retrofit 3.0.0](https://square.github.io/retrofit/) - Cliente HTTP.
-    * [Gson](https://github.com/google/gson) - Convertidor de JSON.
+    * [Gson](https://github.com/google/gson) - Convertidor de JSON. ¿Debería moverlo a Kotlin serialization? 
 * **Imágenes:**
     * [Coil 2.7.0](https://coil-kt.github.io/coil/) - Carga asíncrona de imágenes para Compose.
 * **Concurrencia:** Kotlin Coroutines & Flow.

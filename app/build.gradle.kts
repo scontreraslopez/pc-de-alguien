@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("org.jetbrains.kotlin.plugin.serialization") version "2.2.21"  //Este es el plugin que necesito
 }
 
 android {
@@ -52,9 +53,14 @@ dependencies {
     // ViewModel utilities for Compose
     implementation(libs.androidx.lifecycle.viewmodel.compose)
 
-    // Retrofit & Gson
+    // Runtime de Kotlin Serialization (JSON)
+    implementation(libs.kotlinx.serialization.json)
+
+    // Retrofit core
     implementation(libs.retrofit)
-    implementation(libs.converter.gson)
+
+    // Converter oficial de Retrofit para kotlinx.serialization (NO Jake Wharton)
+    implementation(libs.converter.kotlinx.serialization)
 
     // Coil para Compose
     implementation(libs.coil.compose)
