@@ -18,10 +18,6 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -118,11 +114,18 @@ fun PokemonItem(pokemon: PokemonDto) {
             modifier = Modifier.padding(8.dp).fillMaxWidth()
         ) {
             // TODO 5: Construir la URL de la imagen
+            // 🟢 DONE:
             // 1. Obtener el ID desde la URL del pokemon (pokemon.url)
             // 2. Usar: https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{id}.png
 
-            val imageUrl = "" // <-- IMPLEMENTAR AQUÍ LOGICA
+            // Como la URL del pokemon tiene esta pinta: "https://pokeapi.co/api/v2/pokemon-species/4/ lo que me insteresa es extraer el 4
+            // Si leemos el méthod split veremos que si usamos / como delimitador devolverá el siguiente array: [https:, , pokeapi.co, api, v2, pokemon-species, 4, ], pues nos interesa coger el penúltimo y ya está
 
+            val splitUrl = pokemon.url.split("/")
+            val pokemonId = splitUrl[splitUrl.lastIndex - 1] //Hay mil maneras similares de lograr lo mismo
+            val imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$pokemonId.png"
+
+            // Esta es la magia de Coil
             AsyncImage(
                 model = imageUrl,
                 contentDescription = pokemon.name,
