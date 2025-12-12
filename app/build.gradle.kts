@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     id("org.jetbrains.kotlin.plugin.serialization") version "2.2.21"  //Este es el plugin que necesito
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -43,6 +44,10 @@ android {
 }
 
 dependencies {
+
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+
 
     //Nav3
     implementation(libs.androidx.navigation3.runtime)
