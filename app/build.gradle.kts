@@ -4,8 +4,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    id("org.jetbrains.kotlin.plugin.serialization") version "2.2.21"  //Este es el plugin que necesito
-    id("com.google.gms.google-services")
+    alias (libs.plugins.kotlin.serialization)//Este es el plugin que necesito
+    alias (libs.plugins.google.services) //firebase
 }
 
 android {
@@ -49,6 +49,7 @@ android {
 
 dependencies {
 
+    //Firebase
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
 
