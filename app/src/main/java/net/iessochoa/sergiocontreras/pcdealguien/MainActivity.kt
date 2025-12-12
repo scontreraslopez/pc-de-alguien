@@ -13,7 +13,11 @@ class MainActivity : ComponentActivity() {
         setContent {
             PCdeAlguienTheme {
                 //* Configuration for the Minimal Firebase UI Auth */
-
+                val configuration = authUIConfiguration {
+                    providers = listOf(
+                        AuthProvider.Email(),
+                        AuthProvider.Google()
+                    )
                 PokemonApp()
             }
         }
