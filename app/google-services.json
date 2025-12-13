@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "568097688762",
+    "project_id": "fir-authentication-demo-55855",
+    "storage_bucket": "fir-authentication-demo-55855.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568097688762:android:8a2b8d9dcbbb18a9144683",
+        "android_client_info": {
+          "package_name": "net.iessochoa.sergiocontreras.pcdealguien"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwjvZeW5qui4AxMJykVgvGYEHTWyN_xsQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
